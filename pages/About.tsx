@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Hammer, Heart, Users, MapPin } from 'lucide-react';
+import { FOCAL_PERSON } from '../constants';
 
 const About: React.FC = () => {
   return (
@@ -9,19 +10,19 @@ const About: React.FC = () => {
         <div>
           <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-6">Built with Passion, Crafted for Life.</h1>
           <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-            Founded in Gujrat, Pakistan, Artisan Woodworks started as a small family-run workshop with a single mission: to keep the art of traditional woodworking alive in the modern world.
+            Based in Latifabad, Hyderabad-Sindh, Artisan Woodworks started as a vision to merge classic woodworking artistry with modern living needs.
           </p>
           <p className="text-lg text-stone-600 mb-8 leading-relaxed">
-            Today, we are a team of dedicated craftsmen who combine heritage techniques with contemporary design aesthetics. Every piece that leaves our workshop is inspected for structural integrity and aesthetic perfection.
+            Under the guidance of {FOCAL_PERSON}, we have built a team of dedicated craftsmen who combine heritage techniques with contemporary design aesthetics. Every piece that leaves our workshop is inspected for structural integrity and aesthetic perfection.
           </p>
           
           <div className="grid grid-cols-2 gap-8 py-8 border-t border-stone-100">
             <div>
-              <h3 className="text-3xl font-bold text-orange-800">20+</h3>
+              <h3 className="text-3xl font-bold text-orange-800">15+</h3>
               <p className="text-stone-500 text-sm font-medium uppercase tracking-wider">Years Experience</p>
             </div>
             <div>
-              <h3 className="text-3xl font-bold text-orange-800">1000+</h3>
+              <h3 className="text-3xl font-bold text-orange-800">500+</h3>
               <p className="text-stone-500 text-sm font-medium uppercase tracking-wider">Happy Homes</p>
             </div>
           </div>
@@ -66,7 +67,7 @@ const About: React.FC = () => {
             <MapPin size={32} />
           </div>
           <h3 className="text-xl font-bold mb-4">Our Origin</h3>
-          <p className="text-stone-600">Based in the industrial heart of Gujrat, we leverage local craftsmanship that has been famous for centuries.</p>
+          <p className="text-stone-600">Rooted in Latifabad, Hyderabad, we bring the finest craftsmanship of Sindh to the forefront of Pakistani furniture.</p>
         </div>
       </div>
     </div>

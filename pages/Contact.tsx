@@ -1,8 +1,7 @@
 
 import React from 'react';
-// Fixed: Removed unused Mail and Globe imports
-import { Phone, MapPin, MessageCircle, Clock } from 'lucide-react';
-import { WHATSAPP_NUMBER, WHATSAPP_LINK } from '../constants';
+import { Phone, MapPin, MessageCircle, Clock, User } from 'lucide-react';
+import { WHATSAPP_NUMBER, WHATSAPP_LINK, FOCAL_PERSON } from '../constants';
 
 const Contact: React.FC = () => {
   return (
@@ -10,12 +9,21 @@ const Contact: React.FC = () => {
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">Get in Touch</h1>
         <p className="text-lg text-stone-500 max-w-2xl mx-auto">
-          Visit our workshop or contact us online. We're here to answer any questions about our furniture or your custom projects.
+          Visit our workshop or contact us online. {FOCAL_PERSON} and our team are here to answer any questions about our furniture or your custom projects.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
         <div className="space-y-8">
+          <div className="bg-white p-8 rounded-2xl border border-stone-100 shadow-sm flex items-start space-x-6">
+            <div className="bg-orange-100 text-orange-800 p-4 rounded-xl"><User size={28} /></div>
+            <div>
+              <h3 className="text-xl font-bold text-stone-900 mb-2">Focal Person</h3>
+              <p className="text-stone-700 font-semibold mb-1">{FOCAL_PERSON}</p>
+              <p className="text-stone-500 text-sm">Managing Director & Craft Consultant</p>
+            </div>
+          </div>
+
           <div className="bg-white p-8 rounded-2xl border border-stone-100 shadow-sm flex items-start space-x-6">
             <div className="bg-orange-100 text-orange-800 p-4 rounded-xl"><Phone size={28} /></div>
             <div>
@@ -34,7 +42,7 @@ const Contact: React.FC = () => {
             <div className="bg-orange-100 text-orange-800 p-4 rounded-xl"><MapPin size={28} /></div>
             <div>
               <h3 className="text-xl font-bold text-stone-900 mb-2">Our Workshop</h3>
-              <p className="text-stone-600">Main G.T Road, Phase 2, Industrial Estate,<br />Gujrat, Punjab, Pakistan</p>
+              <p className="text-stone-600">Latifabad,<br />Hyderabad-Sindh, Pakistan</p>
             </div>
           </div>
 
@@ -51,17 +59,17 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="h-[500px] rounded-2xl overflow-hidden bg-stone-200 relative grayscale hover:grayscale-0 transition-all duration-700">
-          {/* Mock Google Map Placeholder */}
+          {/* Hyderabad Google Map Placeholder */}
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-stone-100">
             <MapPin size={48} className="text-orange-800 mb-4 animate-bounce" />
             <p className="text-stone-500 font-bold">Interactive Map Loading...</p>
-            <p className="text-stone-400 text-sm">Industrial Estate, Gujrat</p>
+            <p className="text-stone-400 text-sm">Latifabad, Hyderabad</p>
             <div className="mt-8 grid grid-cols-4 gap-2 opacity-20">
                 {[...Array(16)].map((_, i) => <div key={i} className="w-12 h-12 bg-stone-300 rounded"></div>)}
             </div>
           </div>
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107842.123!2d74.0722213!3d32.5714241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f16f5c5b4e7b1%3A0xc3f98647a5024b45!2sGujrat%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115291.804!2d68.318239!3d25.3947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c70f6d4447345%3A0x41013d82e39211ad!2sHyderabad%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 

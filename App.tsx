@@ -1,20 +1,20 @@
 
 /**
  * Artisan Woodworks Web App
- * Version: 1.0.5
- * Fixed: TS2688 "Cannot find type definition file for 'node'" by adding @types/node and tsconfig.json.
- * Improved: TypeScript compiler configuration for production builds.
+ * Version: 1.0.6
+ * Updated: Focal Person (Mr. Ghayoor Abbas), Contact (03182392794), and Location (Hyderabad).
+ * Improved: Typography and mobile layout for footer contact info.
  */
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle, Phone, MapPin, Hammer } from 'lucide-react';
+import { Menu, X, MessageCircle, Phone, MapPin, Hammer, User } from 'lucide-react';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import ProductDetail from './pages/ProductDetail';
 import CustomOrder from './pages/CustomOrder';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import { BUSINESS_NAME, WHATSAPP_LINK } from './constants';
+import { BUSINESS_NAME, WHATSAPP_LINK, WHATSAPP_NUMBER, FOCAL_PERSON } from './constants';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -98,8 +98,8 @@ const Footer = () => (
       <div className="col-span-1 md:col-span-2">
         <h2 className="text-white text-xl font-bold mb-4">{BUSINESS_NAME}</h2>
         <p className="max-w-md text-stone-400 leading-relaxed">
-          Handcrafting the finest furniture in Pakistan. From traditional Sheesham pieces to modern minimal designs, 
-          we bring quality and craftsmanship to every home and office.
+          Handcrafting the finest furniture in Pakistan. From traditional wood pieces to modern minimal designs, 
+          we bring quality and craftsmanship to every home and office in Hyderabad and beyond.
         </p>
       </div>
       <div>
@@ -114,9 +114,9 @@ const Footer = () => (
       <div>
         <h3 className="text-white font-semibold mb-4 underline decoration-orange-800 underline-offset-8">Contact</h3>
         <ul className="space-y-2 text-stone-400">
-          <li className="flex items-center space-x-2"><Phone size={16} /> <span>+92 300 1234567</span></li>
-          <li className="flex items-center space-x-2"><MessageCircle size={16} /> <span>WhatsApp Inquiry</span></li>
-          <li className="flex items-center space-x-2"><MapPin size={16} /> <span>Gujrat, Pakistan</span></li>
+          <li className="flex items-center space-x-2"><User size={16} className="text-orange-500" /> <span>{FOCAL_PERSON}</span></li>
+          <li className="flex items-center space-x-2"><Phone size={16} /> <span>{WHATSAPP_NUMBER}</span></li>
+          <li className="flex items-center space-x-2"><MapPin size={16} /> <span>Latifabad, Hyderabad-Sindh</span></li>
         </ul>
       </div>
     </div>

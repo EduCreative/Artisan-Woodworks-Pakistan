@@ -2,7 +2,8 @@
 import { Category, Product } from './types';
 
 export const BUSINESS_NAME = "Artisan Woodworks";
-export const WHATSAPP_NUMBER = "+923001234567"; // Placeholder for Pakistani workshop
+export const FOCAL_PERSON = "Mr. Ghayoor Abbas";
+export const WHATSAPP_NUMBER = "+923182392794";
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}`;
 
 export const PRODUCTS: Product[] = [
