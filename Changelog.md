@@ -3,6 +3,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2025-05-21
+### Fixed
+- Fixed Vercel build error `TS2688: Cannot find type definition file for 'node'`.
+- Added `@types/node` to devDependencies.
+- Created `tsconfig.json` to provide proper TypeScript compiler configuration for Vite and React 19.
+
 ## [1.0.4] - 2025-05-21
 ### Fixed
 - Resolved "Blank Page" issue on Vercel deployment.

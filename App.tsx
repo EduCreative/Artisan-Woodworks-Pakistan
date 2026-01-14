@@ -1,9 +1,9 @@
 
 /**
  * Artisan Woodworks Web App
- * Version: 1.0.4
- * Fixed: Vercel deployment "blank page" by adding entry script and build config.
- * Improved: Cleaned up script imports for deployment stability.
+ * Version: 1.0.5
+ * Fixed: TS2688 "Cannot find type definition file for 'node'" by adding @types/node and tsconfig.json.
+ * Improved: TypeScript compiler configuration for production builds.
  */
 import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
