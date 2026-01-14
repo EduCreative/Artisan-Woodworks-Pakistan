@@ -1,20 +1,78 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
-# Run and deploy your AI Studio app
+# Artisan Woodworks Pakistan 🪑
 
-This contains everything you need to run your app locally.
+**Artisan Woodworks** is a premium digital showroom and custom furniture inquiry platform tailored for the Pakistani market. It blends traditional craftsmanship from the heart of Gujrat with a modern, high-performance web experience.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1-ASbr2Siug59qwlr3B_m9xyGtN4tUXyG
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=flat-square&logo=vercel)](https://vercel.com)
+[![React Version](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## ✨ Features
 
+- 🏛️ **Digital Showroom**: Browse curated collections for Living Room, Bedroom, Office, and Dining.
+- 🎨 **Bespoke Design Flow**: A custom inquiry system allowing users to upload reference images (Pinterest/Instagram) and specify materials/dimensions.
+- 📱 **WhatsApp Integration**: Seamless lead generation by bridging web inquiries directly to a craftsman's WhatsApp chat.
+- ⚡ **Mobile-First Design**: Optimized for the highest performance on mobile devices, common for the local target audience.
+- 🪵 **Heritage Focused**: Highlighting premium materials like Sheesham, Walnut, and Mahogany.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 19](https://react.dev)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) (Utility-first, responsive design)
+- **Icons**: [Lucide React](https://lucide.dev)
+- **Routing**: [React Router 7](https://reactrouter.com)
+- **Type Safety**: [TypeScript](https://www.typescriptlang.org)
+
+---
+
+## 🚀 Deployment to Vercel
+
+To deploy this project from your GitHub repository to Vercel, follow these steps:
+
+1. **Push to GitHub**:
+   - Initialize git: `git init`
+   - Commit changes: `git add . && git commit -m "Initial commit"`
+   - Push to your repo: `git push origin main`
+
+2. **Connect to Vercel**:
+   - Visit [Vercel](https://vercel.com) and click **"Add New" > "Project"**.
+   - Import your repository.
+   - Vercel will auto-detect the configuration. If asked:
+     - **Build Command**: `npm run build` (or similar depending on your local tooling).
+     - **Output Directory**: `dist` or `build`.
+   - Click **"Deploy"**.
+
+3. **Enjoy Auto-Deploys**: Every push to your `main` branch will automatically trigger a production build.
+
+---
+
+## 📁 Project Structure
+
+```text
+.
+├── pages/              # Main view components
+│   ├── Home.tsx        # Hero section & featured categories
+│   ├── Categories.tsx  # Product catalog with filters
+│   ├── ProductDetail.tsx # Detailed item view
+│   ├── CustomOrder.tsx # Bespoke inquiry form with file upload
+│   ├── About.tsx       # Company story & values
+│   └── Contact.tsx     # Location & contact details
+├── constants.ts        # Business data & Product mockups
+├── types.ts            # TypeScript interfaces
+├── App.tsx             # Routing & Global Layout
+├── index.tsx           # React entry point
+└── metadata.json       # App metadata & permissions
+```
+
+---
+
+## 📜 License
+
+This project is proprietary for **Artisan Woodworks**. All furniture designs and brand assets are protected.
+
+---
+*Built with ❤️ for the artisans of Pakistan.*

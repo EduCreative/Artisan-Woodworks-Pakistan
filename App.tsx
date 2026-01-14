@@ -1,11 +1,11 @@
 
 /**
  * Artisan Woodworks Web App
- * Version: 1.0.2
- * Added: Custom reference image upload support on Order Page.
- * Improved: Mobile-first responsive optimizations.
+ * Version: 1.0.4
+ * Fixed: Vercel deployment "blank page" by adding entry script and build config.
+ * Improved: Cleaned up script imports for deployment stability.
  */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, Phone, MapPin, Hammer } from 'lucide-react';
 import Home from './pages/Home';
@@ -18,7 +18,7 @@ import { BUSINESS_NAME, WHATSAPP_LINK } from './constants';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
@@ -40,7 +40,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-stone-200 bg-white/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" aria-label="Home">
             <Hammer className="text-orange-800" size={24} />
             <span className="text-xl font-bold tracking-tight text-stone-800">{BUSINESS_NAME}</span>
           </Link>
@@ -61,7 +61,12 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-stone-600">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-stone-600 p-2"
+              aria-expanded={isOpen}
+              aria-label="Toggle Menu"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -70,13 +75,13 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-stone-100 py-4 px-4 space-y-4">
+        <div className="md:hidden bg-white border-t border-stone-100 py-4 px-4 space-y-4 shadow-xl">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="block text-lg font-medium text-stone-700 hover:text-orange-800"
+              className="block text-lg font-medium text-stone-700 hover:text-orange-800 p-2"
             >
               {link.name}
             </Link>
@@ -92,22 +97,22 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
       <div className="col-span-1 md:col-span-2">
         <h2 className="text-white text-xl font-bold mb-4">{BUSINESS_NAME}</h2>
-        <p className="max-w-md text-stone-400">
+        <p className="max-w-md text-stone-400 leading-relaxed">
           Handcrafting the finest furniture in Pakistan. From traditional Sheesham pieces to modern minimal designs, 
           we bring quality and craftsmanship to every home and office.
         </p>
       </div>
       <div>
-        <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+        <h3 className="text-white font-semibold mb-4 underline decoration-orange-800 underline-offset-8">Quick Links</h3>
         <ul className="space-y-2">
-          <li><Link to="/categories" className="hover:text-white transition">Showroom</Link></li>
-          <li><Link to="/custom-order" className="hover:text-white transition">Custom Design</Link></li>
-          <li><Link to="/about" className="hover:text-white transition">Our Story</Link></li>
-          <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
+          <li><Link to="/categories" className="hover:text-white transition-colors">Showroom</Link></li>
+          <li><Link to="/custom-order" className="hover:text-white transition-colors">Custom Design</Link></li>
+          <li><Link to="/about" className="hover:text-white transition-colors">Our Story</Link></li>
+          <li><Link to="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
         </ul>
       </div>
       <div>
-        <h3 className="text-white font-semibold mb-4">Contact</h3>
+        <h3 className="text-white font-semibold mb-4 underline decoration-orange-800 underline-offset-8">Contact</h3>
         <ul className="space-y-2 text-stone-400">
           <li className="flex items-center space-x-2"><Phone size={16} /> <span>+92 300 1234567</span></li>
           <li className="flex items-center space-x-2"><MessageCircle size={16} /> <span>WhatsApp Inquiry</span></li>
@@ -115,8 +120,8 @@ const Footer = () => (
         </ul>
       </div>
     </div>
-    <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-800 text-center text-sm">
-      <p>&copy; {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved.</p>
+    <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-stone-800 text-center text-sm text-stone-500">
+      <p>&copy; {new Date().getFullYear()} {BUSINESS_NAME}. All rights reserved. Designed with Heritage & Modernity.</p>
     </div>
   </footer>
 );
@@ -144,8 +149,9 @@ const App: React.FC = () => {
           href={WHATSAPP_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center justify-center"
+          className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all hover:scale-110 active:scale-95 z-50 flex items-center justify-center hover:rotate-6"
           title="Chat with us on WhatsApp"
+          aria-label="Contact on WhatsApp"
         >
           <MessageCircle size={32} />
         </a>
