@@ -2,7 +2,7 @@
 import { Category, Product } from './types';
 
 export const BUSINESS_NAME = "Artisan Woodworks";
-export const FOCAL_PERSON = "Mr. Ghayoor Abbas";
+export const FOCAL_PERSON = "Mr. Ghayoor Ahmed";
 export const WHATSAPP_NUMBER = "+923182392794";
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}`;
 
@@ -19,7 +19,8 @@ export const PRODUCTS: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&q=80&w=800'
-    ]
+    ],
+    videoUrl: 'https://player.vimeo.com/external/370331493.sd.mp4?s=2906d744f4d1e2195f9a657e3f6d7168c4a16972&profile_id=164&oauth2_token_id=57447761'
   },
   {
     id: '2',

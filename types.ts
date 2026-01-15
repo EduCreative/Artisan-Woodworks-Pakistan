@@ -22,6 +22,7 @@ export interface Product {
   };
   deliveryWeeks: number;
   images: string[];
+  videoUrl?: string;
 }
 
 export interface CustomInquiry {
